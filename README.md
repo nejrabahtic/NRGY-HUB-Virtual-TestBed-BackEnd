@@ -1,6 +1,9 @@
 ## NRGY HUB Virtual TestBed BackEnd
 
-Front-End app running on localhost:8080
+Back-End app running on localhost:8000
+
+Spring Boot Maven project
+Database hosted on mlab.com
 
 Software Engineering 2, Project for Future Energy Center, MDH
 
