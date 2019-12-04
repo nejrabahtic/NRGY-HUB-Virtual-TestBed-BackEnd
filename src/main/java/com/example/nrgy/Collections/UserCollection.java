@@ -4,21 +4,32 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Id;
 
-@Document
+@Document(collection = "user")
 public class UserCollection {
     @Id
-    private ObjectId id;
+    private String id;
     private String username;
     private String password;
     private String email;
     private String companyName;
 
-    public ObjectId getId() {
-        return id;
+
+    public UserCollection(){}
+
+    public UserCollection(String username, String password, String email, String companyName) {
+        this.id = new ObjectId().toString();
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.companyName = companyName;
+    }
+
+    public String getId() {
+        return id.toString();
     }
 
     public void setId(ObjectId id) {
-        this.id = id;
+        this.id = id.toString();
     }
 
     public String getUsername() {
@@ -52,16 +63,4 @@ public class UserCollection {
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
-
-    public UserCollection(String username, String password, String email, String companyName) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.companyName = companyName;
-    }
-
-    public UserCollection(){}
-
-
-
 }
