@@ -26,7 +26,7 @@ public class NrgyApplication implements CommandLineRunner {
 	@Bean
 	public Jackson2RepositoryPopulatorFactoryBean repositoryPopulatorFactoryBean(UserController userController){
 		userController.deleteAllUsers();
-		
+
 		Jackson2RepositoryPopulatorFactoryBean factoryBean = new Jackson2RepositoryPopulatorFactoryBean();
 		factoryBean.setResources(new Resource[] { new ClassPathResource("users.json")});
 		return factoryBean;
