@@ -13,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("nrgyData")
 public class NRGYDataController {
-/*
     @Autowired
     private NRGYDataService NRGYDataService;
 
@@ -41,7 +40,6 @@ public class NRGYDataController {
         nrgyDataService.deleteAllNRGYData();
         return new ResponseEntity<>(HttpStatus.OK);
     }
-*/
 
 
 }

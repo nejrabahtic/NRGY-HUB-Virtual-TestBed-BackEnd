@@ -12,18 +12,11 @@ import java.util.Optional;
 
 @Service
 public class NRGYDataService {
-/*@Autowired
+@Autowired
 private NRGYDataRepository nrgyDataRepository;
 
 public List<NRGYDataCollection> getAllNRGYData() {
     return nrgyDataRepository.findAll();
-}
-
-public NRGYDataCollection createNRGYData(String field, Integer id, Integer connection, String deliveryPoint,
-                          Integer type, Date connectionDate, Integer numberOfTheCounter, Integer ean,
-                          Integer networkType, String fare, double yearlySpentEnergy, double effectEnergy){
-    return nrgyDataRepository.save(new NRGYDataCollection(field, id, connection, deliveryPoint, type, connectionDate,
-                            numberOfTheCounter, ean, networkType, fare, yearlySpentEnergy, effectEnergy));
 }
 
 
@@ -36,13 +29,10 @@ public NRGYDataCollection getNRGYById(String id){
     return nrgyData.get();
 }
 
-public void deleteNRGYDatabyId(String id){
-                                        nrgyDataRepository.deleteById(id);
-                                                                          }
 
 public void deleteAllNRGYData(){
                               nrgyDataRepository.deleteAll();
-                                                             }*/
+                                                             }
 
 }
 
