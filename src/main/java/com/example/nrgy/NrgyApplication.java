@@ -31,5 +31,14 @@ public class NrgyApplication implements CommandLineRunner {
 		factoryBean.setResources(new Resource[] { new ClassPathResource("users.json")});
 		return factoryBean;
 	}
+
+	@Bean
+	public Jackson2RepositoryPopulatorFactoryBean repositoryPopulatorFactoryBean(/*NRGYController NRGYController*/){
+		//NRGYController.deleteAllNRGYData();
+
+		Jackson2RepositoryPopulatorFactoryBean factoryBean = new Jackson2RepositoryPopulatorFactoryBean();
+		factoryBean.setResources(new Resource[] { new ClassPathResource("nrgyData.json")});
+		return factoryBean;
+	}
 }
 
