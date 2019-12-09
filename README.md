@@ -21,3 +21,5 @@
 The app will be running on localhost:8000 and the database is hosted on mlab.
 
 I you want to check all users and all nrgy data, just go to localhost:8000/user and localhost:8000/nrgydata respectively.
+
+After running the project you can go on http://localhost:8000/swagger-ui.html to test controllers written so far.
