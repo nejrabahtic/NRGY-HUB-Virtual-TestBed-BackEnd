@@ -1,4 +1,5 @@
 com/example/nrgy/Collections/UserCollection.class
+com/example/nrgy/Swagger/Swagger.class
 com/example/nrgy/Collections/NRGYDataCollection.class
 com/example/nrgy/NrgyApplication.class
 com/example/nrgy/Controllers/UserController.class

@@ -17,7 +17,7 @@ public class UserController {
     private UserService userService;
 
     @CrossOrigin
-    @PostMapping(value = "/user", consumes = "application/json")
+    @PostMapping
     public ResponseEntity<UserCollection> createUser(@RequestBody UserCollection user){
         return new ResponseEntity<UserCollection>(userService.createUser(user.getUsername(),
                 user.getPassword(), user.getEmail(), user.getCompanyName()), HttpStatus.CREATED);
