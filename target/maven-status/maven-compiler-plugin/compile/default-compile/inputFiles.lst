@@ -1,7 +1,8 @@
-/home/bebo/Desktop/NRGY-HUB-Virtual-TestBed-BackEnd/src/main/java/com/example/nrgy/Swagger/Swagger.java
-/home/bebo/Desktop/NRGY-HUB-Virtual-TestBed-BackEnd/src/main/java/com/example/nrgy/Repositories/UserRepository.java
-/home/bebo/Desktop/NRGY-HUB-Virtual-TestBed-BackEnd/src/main/java/com/example/nrgy/NrgyApplication.java
-/home/bebo/Desktop/NRGY-HUB-Virtual-TestBed-BackEnd/src/main/java/com/example/nrgy/Collections/UserCollection.java
-/home/bebo/Desktop/NRGY-HUB-Virtual-TestBed-BackEnd/src/main/java/com/example/nrgy/Controllers/UserController.java
-/home/bebo/Desktop/NRGY-HUB-Virtual-TestBed-BackEnd/src/main/java/com/example/nrgy/Services/UserService.java
-/home/bebo/Desktop/NRGY-HUB-Virtual-TestBed-BackEnd/src/main/java/com/example/nrgy/Collections/NRGYDataCollection.java
+/home/bebo/Desktop/backend/src/main/java/com/example/backend/Repositories/UserRepository.java
+/home/bebo/Desktop/backend/src/main/java/com/example/backend/Controllers/UserController.java
+/home/bebo/Desktop/backend/src/main/java/com/example/backend/Swagger/Swagger.java
+/home/bebo/Desktop/backend/src/main/java/com/example/backend/BackendApplication.java
+/home/bebo/Desktop/backend/src/main/java/com/example/backend/Models/UserTypeModel.java
+/home/bebo/Desktop/backend/src/main/java/com/example/backend/Controllers/UserTypeController.java
+/home/bebo/Desktop/backend/src/main/java/com/example/backend/Repositories/UserTypeRepository.java
+/home/bebo/Desktop/backend/src/main/java/com/example/backend/Models/UserModel.java

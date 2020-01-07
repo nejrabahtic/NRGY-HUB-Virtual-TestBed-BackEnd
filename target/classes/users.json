@@ -1,8 +1,0 @@
-[
-  {"_class": "com.example.nrgy.Collections.UserCollection","username": "nejra", "password": "nejra123",
-              "email": "nbc19001@student.mdh.se", "companyName": "MDH"},
-  {"_class": "com.example.nrgy.Collections.UserCollection","username": "juan", "password": "mexico4",
-    "email": "jesoberanis@gmail.com", "companyName": "MDH"},
-  {"_class": "com.example.nrgy.Collections.UserCollection","username": "clara", "password": "123designer!",
-    "email": "clara.wiman@tele2.se", "companyName": "Tele2"}
-]
