@@ -2,7 +2,6 @@ package com.example.backend.Controllers;
 
 import com.example.backend.Models.UserModel;
 import com.example.backend.Repositories.UserRepository;
-import com.example.backend.Repositories.UserTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +13,6 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private UserTypeRepository userTypeRepository;
 
     @PostMapping(path="/add")
     public @ResponseBody String addUser(@RequestBody UserModel userModel) {

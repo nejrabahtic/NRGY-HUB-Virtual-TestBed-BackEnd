@@ -5,21 +5,57 @@ import javax.validation.constraints.NotNull;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
 
     @NotNull(message = "Name must be provided.")
+    @Column(name = "name")
     private String name;
+
     @NotNull(message = "Email must be provided.")
+    @Column(name = "email")
     private String email;
+
     @NotNull(message = "Password must be provided.")
+    @Column(name = "password")
     private String password;
+
     @NotNull(message = "Address must be provided.")
+    @Column(name = "address")
     private String address;
+
     @NotNull(message = "User type must be provided.")
+    @Column(name = "type")
     private String type;
+
+    @NotNull(message = "Latitude must be provided.")
+    @Column(name = "lat")
+    private Float lat;
+
+    @NotNull(message = "Longitude must be provided.")
+    @Column(name = "lon")
+    private Float lon;
+
+    @Column(name = "heatCompany")
+    private Boolean heatCompany;
+
+    @Column(name = "elecCompany")
+    private Boolean elecCompany;
+
+    @Column(name = "admin")
+    private Boolean admin;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "company_id", referencedColumnName = "id")
+    private CompanyModel company;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "meter_id", referencedColumnName = "id")
+    private MeterModel meter;
 
     public Integer getId() {
         return id;
@@ -69,14 +105,68 @@ public class UserModel {
         this.type = type;
     }
 
-    public UserModel() {
+    public Float getLat() {
+        return lat;
     }
 
-    public UserModel(String name, String email, String password, String address, String type) {
+    public void setLat(Float lat) {
+        this.lat = lat;
+    }
+
+    public Float getLon() {
+        return lon;
+    }
+
+    public void setLon(Float lon) {
+        this.lon = lon;
+    }
+
+    public Boolean getHeatCompany() {
+        return heatCompany;
+    }
+
+    public void setHeatCompany(Boolean heatCompany) {
+        this.heatCompany = heatCompany;
+    }
+
+    public Boolean getElecCompany() {
+        return elecCompany;
+    }
+
+    public void setElecCompany(Boolean elecCompany) {
+        this.elecCompany = elecCompany;
+    }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
+
+    public CompanyModel getCompany() {
+        return company;
+    }
+
+    public MeterModel getMeter() {
+        return meter;
+    }
+
+    public UserModel(){
+
+    }
+
+    public UserModel(@NotNull(message = "Name must be provided.") String name, @NotNull(message = "Email must be provided.") String email, @NotNull(message = "Password must be provided.") String password, @NotNull(message = "Address must be provided.") String address, @NotNull(message = "User type must be provided.") String type, @NotNull(message = "Latitude must be provided.") Float lat, @NotNull(message = "Longitude must be provided.") Float lon, Boolean heatCompany, Boolean elecCompany, Boolean admin) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
         this.type = type;
+        this.lat = lat;
+        this.lon = lon;
+        this.heatCompany = heatCompany;
+        this.elecCompany = elecCompany;
+        this.admin = admin;
     }
 }

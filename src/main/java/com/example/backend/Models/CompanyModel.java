@@ -5,15 +5,23 @@ import javax.validation.constraints.NotNull;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "company")
 public class CompanyModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
 
     @NotNull(message = "Name must be provided.")
+    @Column(name = "name")
     private String name;
+
     @NotNull(message = "Address must be provided.")
+    @Column(name = "address")
     private String address;
+
+    @OneToOne(mappedBy = "company")
+    private UserModel user;
 
     public Integer getId() {
         return id;
@@ -39,7 +47,8 @@ public class CompanyModel {
         this.address = address;
     }
 
-    public CompanyModel() {
+    public CompanyModel(){
+
     }
 
     public CompanyModel(@NotNull(message = "Name must be provided.") String name, @NotNull(message = "Address must be provided.") String address) {

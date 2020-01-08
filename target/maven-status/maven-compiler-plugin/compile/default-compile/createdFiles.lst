@@ -1,3 +1,4 @@
+com/example/backend/Controllers/CompanyController.class
 com/example/backend/Controllers/MeterController.class
 com/example/backend/Repositories/UserRepository.class
 com/example/backend/Controllers/BuildingController.class

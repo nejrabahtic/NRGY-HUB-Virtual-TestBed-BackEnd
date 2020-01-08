@@ -1,20 +1,21 @@
 package com.example.backend.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name="building")
 public class BuildingModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotNull(message = "Name must be provided.")
+    @Column(name = "name")
     private String name;
+
     @NotNull(message = "Address must be provided.")
+    @Column(name = "address")
     private  String address;
 
     public Integer getId() {
