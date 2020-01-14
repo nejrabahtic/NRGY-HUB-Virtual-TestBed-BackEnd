@@ -3,9 +3,11 @@ package com.example.backend.Models;
 import javax.validation.constraints.NotNull;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,9 +55,15 @@ public class UserModel {
     @JoinColumn(name = "company_id", referencedColumnName = "id")
     private CompanyModel company;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    /*@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "meter_id", referencedColumnName = "id")
-    private MeterModel meter;
+    private MeterModel meter;*/
+
+    /*@ManyToMany(mappedBy = "users", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    private Set<MeterModel> meters = new HashSet<>();*/
+
+    @OneToMany(mappedBy="user")
+    private Set<MeterModel> meters;
 
     public Integer getId() {
         return id;
@@ -143,14 +151,6 @@ public class UserModel {
 
     public void setAdmin(Boolean admin) {
         this.admin = admin;
-    }
-
-    public CompanyModel getCompany() {
-        return company;
-    }
-
-    public MeterModel getMeter() {
-        return meter;
     }
 
     public UserModel(){

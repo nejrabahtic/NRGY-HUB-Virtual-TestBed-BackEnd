@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:8000")
 @RequestMapping(path="/company")
 public class CompanyController {
     @Autowired

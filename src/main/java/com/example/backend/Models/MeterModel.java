@@ -2,6 +2,8 @@ package com.example.backend.Models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "meter")
@@ -11,15 +13,15 @@ public class MeterModel {
     @Column(name = "id")
     private Integer id;
 
-    @NotNull(message = "Name must be provided.")
+    /*@NotNull(message = "Name must be provided.")
     @Column(name = "name")
-    private String NameMeter;
+    private String NameMeter;*/
 
     @NotNull(message = "Field must be provided.")
     @Column(name = "field")
     private String field;
 
-    @NotNull(message = "Connection must be provided.")
+    /*@NotNull(message = "Connection must be provided.")
     @Column(name = "connection")
     private Integer connection;
 
@@ -29,7 +31,7 @@ public class MeterModel {
 
     @NotNull(message = "Effect energy must be provided.")
     @Column(name = "effectEnergy")
-    private Integer effectEnergy;
+    private Integer effectEnergy;*/
 
     @NotNull(message = "Latitude must be provided.")
     @Column(name = "lat")
@@ -39,8 +41,37 @@ public class MeterModel {
     @Column(name = "lon")
     private Float lon;
 
-    @OneToOne(mappedBy = "meter")
+    @NotNull(message = "Address must be provided.")
+    @Column(name = "address")
+    private String address;
+
+    @NotNull(message = "Heat must be provided.")
+    @Column(name = "heat")
+    private Float heat;
+
+    @NotNull(message = "Elec must be provided.")
+    @Column(name = "elect")
+    private Float elect;
+
+    /*@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserModel user;*/
+
+    /*@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name = "Meter_Users",
+            joinColumns = {@JoinColumn(name = "meter_id")},
+            inverseJoinColumns = {@JoinColumn(name = "user_id")}
+    )
+    private Set<UserModel> users = new HashSet<>();*/
+
+    @ManyToOne
+    @JoinColumn(name="user_id")
     private UserModel user;
+
+    @ManyToOne
+    @JoinColumn(name="company_id")
+    private CompanyModel company;
 
     public Integer getId() {
         return id;
@@ -50,44 +81,12 @@ public class MeterModel {
         this.id = id;
     }
 
-    public String getNameMeter() {
-        return NameMeter;
-    }
-
-    public void setNameMeter(String nameMeter) {
-        NameMeter = nameMeter;
-    }
-
     public String getField() {
         return field;
     }
 
     public void setField(String field) {
         this.field = field;
-    }
-
-    public Integer getConnection() {
-        return connection;
-    }
-
-    public void setConnection(Integer connection) {
-        this.connection = connection;
-    }
-
-    public Integer getDeliveryPoint() {
-        return deliveryPoint;
-    }
-
-    public void setDeliveryPoint(Integer deliveryPoint) {
-        this.deliveryPoint = deliveryPoint;
-    }
-
-    public Integer getEffectEnergy() {
-        return effectEnergy;
-    }
-
-    public void setEffectEnergy(Integer effectEnergy) {
-        this.effectEnergy = effectEnergy;
     }
 
     public Float getLat() {
@@ -106,16 +105,47 @@ public class MeterModel {
         this.lon = lon;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Float getHeat() {
+        return heat;
+    }
+
+    public void setHeat(Float heat) {
+        this.heat = heat;
+    }
+
+    public Float getElect() {
+        return elect;
+    }
+
+    public void setElect(Float elect) {
+        this.elect = elect;
+    }
+
+    public UserModel getUser() {
+        return user;
+    }
+
+    public CompanyModel getCompanyModel() {
+        return company;
+    }
+
     public MeterModel() {
     }
 
-    public MeterModel(@NotNull(message = "Name must be provided.") String nameMeter, @NotNull(message = "Field must be provided.") String field, @NotNull(message = "Connection must be provided.") Integer connection, @NotNull(message = "Delivery point must be provided.") Integer deliveryPoint, @NotNull(message = "Effect energy must be provided.") Integer effectEnergy, @NotNull(message = "Latitude must be provided.") Float lat, @NotNull(message = "Longitude must be provided.") Float lon) {
-        NameMeter = nameMeter;
+    public MeterModel(@NotNull(message = "Field must be provided.") String field, @NotNull(message = "Latitude must be provided.") Float lat, @NotNull(message = "Longitude must be provided.") Float lon, @NotNull(message = "Address must be provided.") String address, @NotNull(message = "Heat must be provided.") Float heat, @NotNull(message = "Elec must be provided.") Float elect) {
         this.field = field;
-        this.connection = connection;
-        this.deliveryPoint = deliveryPoint;
-        this.effectEnergy = effectEnergy;
         this.lat = lat;
         this.lon = lon;
+        this.address = address;
+        this.heat = heat;
+        this.elect = elect;
     }
 }

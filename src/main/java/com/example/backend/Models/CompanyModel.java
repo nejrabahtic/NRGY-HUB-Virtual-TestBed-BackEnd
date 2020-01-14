@@ -3,6 +3,7 @@ package com.example.backend.Models;
 import javax.validation.constraints.NotNull;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "company")
@@ -22,6 +23,9 @@ public class CompanyModel {
 
     @OneToOne(mappedBy = "company")
     private UserModel user;
+
+    @OneToMany(mappedBy="user")
+    private Set<MeterModel> meters;
 
     public Integer getId() {
         return id;
