@@ -30,10 +30,6 @@ public class UserModel {
     @Column(name = "address")
     private String address;
 
-    @NotNull(message = "User type must be provided.")
-    @Column(name = "type")
-    private String type;
-
     @NotNull(message = "Latitude must be provided.")
     @Column(name = "lat")
     private Float lat;
@@ -105,14 +101,6 @@ public class UserModel {
         this.address = address;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public Float getLat() {
         return lat;
     }
@@ -157,12 +145,11 @@ public class UserModel {
 
     }
 
-    public UserModel(@NotNull(message = "Name must be provided.") String name, @NotNull(message = "Email must be provided.") String email, @NotNull(message = "Password must be provided.") String password, @NotNull(message = "Address must be provided.") String address, @NotNull(message = "User type must be provided.") String type, @NotNull(message = "Latitude must be provided.") Float lat, @NotNull(message = "Longitude must be provided.") Float lon, Boolean heatCompany, Boolean elecCompany, Boolean admin) {
+    public UserModel(@NotNull(message = "Name must be provided.") String name, @NotNull(message = "Email must be provided.") String email, @NotNull(message = "Password must be provided.") String password, @NotNull(message = "Address must be provided.") String address, @NotNull(message = "Latitude must be provided.") Float lat, @NotNull(message = "Longitude must be provided.") Float lon, Boolean heatCompany, Boolean elecCompany, Boolean admin) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
-        this.type = type;
         this.lat = lat;
         this.lon = lon;
         this.heatCompany = heatCompany;

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@Controller
 @CrossOrigin(origins = "http://localhost:8000")
+@Controller
 @RequestMapping(path="/user")
 public class UserController {
     @Autowired
